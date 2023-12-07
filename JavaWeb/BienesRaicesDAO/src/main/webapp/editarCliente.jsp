@@ -2,13 +2,6 @@
     pageEncoding="ISO-8859-1"%>
 <%@page import="bean.ClienteDTO"%>
 <%@page import="dao.MySqlCliente"%>
-
-<%
- int cod=(int)Integer.parseInt(request.getParameter("txtCodCli"));
- 	MySqlCliente sqlCli= new MySqlCliente();	
- 	ClienteDTO cliObj = sqlCli.buscarCliente(cod);
- %>    
-   
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,6 +10,12 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >
 </head>
 <body>
+<%
+ 	int cod=(int)Integer.parseInt(request.getParameter("txtCodCli"));
+ 	MySqlCliente sqlCli= new MySqlCliente();	
+ 	ClienteDTO cliObj = sqlCli.buscarCliente(cod);
+ %>    
+
 <div class="container">
             <br/>
             <div class="panel panel-default">

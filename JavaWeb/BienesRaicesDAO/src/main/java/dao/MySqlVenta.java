@@ -20,7 +20,8 @@ public class MySqlVenta implements VentaDAO{
 		ResultSet rs=null;
 		try {
 			cn=SqlDBConn.getConnection("bienesraices");
-			String sql="select * from tb_venta where nventa=?";
+			String sql="SELECT v.nventa, v.departamento, v.tipo, v.distProv, v.plantas, v.mtsTerreno, v.recamaras, v.mtsConstruccion, v.banios, v.precio, v.cochera, v.patio, v.amueblado, v.bardeado, v.enrejado, p.nombre FROM `tb_venta` v inner JOIN tb_vendedor p on "
+					+ "v.vendedor= p.ven_codigo where nventa=?";
 			pstm=cn.prepareStatement(sql);
 			pstm.setInt(1, cod);
 			rs=pstm.executeQuery();
@@ -41,7 +42,7 @@ public class MySqlVenta implements VentaDAO{
 				obj.setAmueblado(rs.getString(13));
 				obj.setBardeado(rs.getString(14));
 				obj.setEnrejado(rs.getString(15));
-				obj.setVendedor(rs.getInt(16));
+				obj.setNombreVendedor(rs.getString(16));
 			}
 			
 		}catch (Exception e) {
@@ -99,7 +100,8 @@ public class MySqlVenta implements VentaDAO{
 		ResultSet rs=null;
 		try {
 			cn=SqlDBConn.getConnection("bienesraices");
-			String sql="select * from tb_venta";
+			String sql="SELECT v.nventa, v.departamento, v.tipo, v.distProv, v.plantas, v.mtsTerreno, v.recamaras, v.mtsConstruccion, v.banios, v.precio, v.cochera, v.patio, v.amueblado, v.bardeado, v.enrejado, p.nombre FROM `tb_venta` v inner JOIN tb_vendedor p on "
+					+ "v.vendedor= p.ven_codigo";
 			pstm=cn.prepareStatement(sql);
 			rs=pstm.executeQuery();
 			while(rs.next()) {
@@ -119,7 +121,7 @@ public class MySqlVenta implements VentaDAO{
 				obj.setAmueblado(rs.getString(13));
 				obj.setBardeado(rs.getString(14));
 				obj.setEnrejado(rs.getString(15));
-				obj.setVendedor(rs.getInt(16));
+				obj.setNombreVendedor(rs.getString(16));
 				data.add(obj);
 			}
 			

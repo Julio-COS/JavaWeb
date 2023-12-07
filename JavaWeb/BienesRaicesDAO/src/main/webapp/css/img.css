@@ -1,0 +1,17 @@
+.bodyForm {
+  margin: 10% 0;
+  padding: 20px;
+  align-self: center;
+  color: rgb(255, 255, 255);
+}
+
+.bodyForm .img{
+  padding: 10px 30%;
+  border-radius: 2%;
+  background: url("../img/bienesraices.jpg");
+  background-size: cover;	
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+	

@@ -87,7 +87,9 @@ public class ServletCliente extends HttpServlet {
 		listar(request, response);
 	}
 	protected void buscar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		int cod=Integer.parseInt(request.getParameter("txtCodCli"));
+		request.setAttribute("cliente", serviceCli.buscarCliente(cod));
+		request.getRequestDispatcher("registrarBoleta.jsp").forward(request, response);
 	}
 	protected void buscarCliente(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String des=request.getParameter("des");

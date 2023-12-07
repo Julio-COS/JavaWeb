@@ -8,7 +8,6 @@
 	int nventa=Integer.parseInt(request.getParameter("nventa"));
 	MySqlVenta sqlPyv= new MySqlVenta();
 	VentaDTO beanPyv=sqlPyv.buscarVenta(nventa);
-
 %>    
 <html>
 <head>

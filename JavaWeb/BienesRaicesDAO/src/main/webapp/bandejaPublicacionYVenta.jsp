@@ -64,7 +64,7 @@
 			      <td><%=beanPyv.getAmueblado() %></td>
 			      <td><%=beanPyv.getBardeado() %></td>
 			      <td><%=beanPyv.getEnrejado() %></td>
-			      <td><%=beanPyv.getVendedor() %> </td>
+			      <td><%=beanPyv.getNombreVendedor() %> </td>
 			      <td><a href="viewPyv.jsp?nventa=<%=beanPyv.getNventa() %> "><img src="icon/view.svg"></a></td>
 			      <td><a href="editarPyv.jsp?nventa=<%=beanPyv.getNventa() %>">
 			          <img src="icon/edit.svg"></a></td>

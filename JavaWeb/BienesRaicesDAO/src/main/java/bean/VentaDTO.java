@@ -22,6 +22,7 @@ public class VentaDTO {
 	private String bardeado;
 	private String enrejado;
 	private int vendedor;
+	private String nombreVendedor;
 
 	
 	public int getNventa() {
@@ -132,4 +133,12 @@ public class VentaDTO {
 	public void setVendedor(int vendedor) {
 		this.vendedor = vendedor;
 	}
+	public String getNombreVendedor() {
+		return nombreVendedor;
+	}
+	public void setNombreVendedor(String nombreVendedor) {
+		this.nombreVendedor = nombreVendedor;
+	}
+	
+	
 }
